@@ -1,0 +1,266 @@
+/* Global responsive typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+a {
+  font-weight: 500;
+  color: #00d4ff;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: #a78bfa;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+button {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00d4ff 0%, #a78bfa 100%);
+  box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00d4ff, #a78bfa);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Utility classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px currentColor;
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* Responsive container padding */
+.container-padding {
+  padding: clamp(1rem, 5vw, 2rem);
+}
+
+/* Section spacing */
+.section-spacing {
+  padding: clamp(2rem, 10vw, 4rem) 0;
+}
+
+/* Grid responsive */
+.grid-responsive {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  button {
+    padding: 0.8em 1.6em;
+    font-size: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 2.8rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/* Fix for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    padding: 1em 1.5em;
+    font-size: 1.1rem;
+  }
+  
+  a {
+    padding: 0.5em;
+  }
+}
+
+/* Page specific fixes */
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+  padding-top: 80px;
+}
+
+/* Game card responsive sizing */
+.game-card {
+  width: 100%;
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Explore page draggable items */
+.draggable-item {
+  cursor: grab;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.draggable-item:active {
+  cursor: grabbing;
+}
+
+/* Canvas responsive */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 600px;
+}
+
+/* Fix for navigation spacing */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 80px;
+  width: 100vw;
+}
+
+/* Ensure content doesn't hide under navigation */
+main,
+.main-content,
+[role="main"] {
+  padding-top: 80px;
+}
